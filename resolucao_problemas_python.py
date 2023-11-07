@@ -16,9 +16,9 @@ print(f'O resultado da subtração do primeiro pelo segundo é: {resultado}')
 # Faça um programa que receba três números. Calcule e mostre a multiplicação desses numeros.
 
 #Entrada dos números para a operação em float devido a possibilidade de casas decimais.
-num1 = float(input('Digite o primeiro número: '))
-num2 = float(input('Digite o segundo número: '))
-num3 = float(input('Digite o terceiro número: '))
+num1 = int(input('Digite o primeiro número: '))
+num2 = int(input('Digite o segundo número: '))
+num3 = int(input('Digite o terceiro número: '))
 
 # Processo da multiplicação dos números contidos nas três variáveis.
 resultado = num1 * num2 * num3
@@ -31,8 +31,8 @@ print(f'O resultado da multiplicação dos três número é: {resultado:.2f}')
 # Faça um programa que receba dois números, calcule e mostre a divisão do primeiro número pelo segundo. Sabe-se que o segundo número não pode ser zero. Portanto não é necessário se preocupar com validações.
 
 # Entrada dos números para a operação.
-num1 = float(input('Digite o primeiro número: '))
-num2 = float(input('Digite o segundo número: '))
+num1 = int(input('Digite o primeiro número: '))
+num2 = int(input('Digite o segundo número: '))
 
 # Processo da divisão da primeira variável pela segunda.
 resultado_div = num1 / num2
