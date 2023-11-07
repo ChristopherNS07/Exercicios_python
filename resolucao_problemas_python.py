@@ -194,7 +194,7 @@ for i in lista:
 # a) a idade dessa pessoa em anos;
 # b) a idade dessa pessoa em meses;
 # c) a idade dessa pessoa em semanas;
-# d) a idade dessa pessoa em dias;
+# d) a idade dessa pessoa em dias.
 
 # Variáveis que armazenam o ano de nascimento do usuário e o ano atual
 ano_nascimento = int(input('Digite seu ano de nascimento: '))
