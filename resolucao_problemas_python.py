@@ -35,7 +35,7 @@ num1 = int(input('Digite o primeiro número: '))
 num2 = int(input('Digite o segundo número: '))
 
 # Processo da divisão da primeira variável pela segunda.
-resultado_div = num1 / num2
+resultado_div = num1 // num2
 
 # Saída do resultado do calculo da divisão realizada.
 print(f'O resultado da divisão do primeiro numero pelo segundo é: {resultado_div:.2f}')
