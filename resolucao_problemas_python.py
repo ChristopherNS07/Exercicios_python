@@ -177,16 +177,33 @@ print(f'O funcionário ganha o equivalente a: {quantidade_salarios:.2f} salário
 # Exercício 13
 # Faça um programa que calcule e mostre a tabuada de um número digitado pelo usuário.
 
-# Lista contendo os números que seram usados para multiplicar
-lista = [1,2,3,4,5,6,7,8,9,10]
-
 # Variável que ira conter o valor que o usuário quer
 num_init = int(input('Digite o número para a tabuada: '))
 
-# Laço de repetição que consulta cada componente da lista e calcula dentro de uma variavél o valor de entrada digitada pelo usuário por cada número dentro da lista e imprimi o resultado para o usuário ver
-for i in lista:
-  calculo_tabuada = num_init * i
-  print(f'{num_init}x{i} = {calculo_tabuada}')
+# Calculo do número digitado pelo usuário pelos respectivos números da tabuada.
+calculo1 = num_init * 1
+calculo2 = num_init * 2
+calculo3 = num_init * 3
+calculo4 = num_init * 4
+calculo5 = num_init * 5
+calculo6 = num_init * 6
+calculo7 = num_init * 7
+calculo8 = num_init * 8
+calculo9 = num_init * 9
+calculo10 = num_init * 10
+
+# Resultado do calculo das variáveis
+print(f'{num_init}x1 = {calculo1}')
+print(f'{num_init}x2 = {calculo2}')
+print(f'{num_init}x3 = {calculo3}')
+print(f'{num_init}x4 = {calculo4}')
+print(f'{num_init}x5 = {calculo5}')
+print(f'{num_init}x6 = {calculo6}')
+print(f'{num_init}x7 = {calculo7}')
+print(f'{num_init}x8 = {calculo8}')
+print(f'{num_init}x9 = {calculo9}')
+print(f'{num_init}x10 = {calculo10}')
+
 
 #------------------------------------------------------------------------------------------------------------
 # Exercício 14
@@ -210,3 +227,74 @@ print(f'Sua idade é: {idade_pessoa}')
 print(f'Sua idade em meses: {idade_mes}')
 print(f'Sua idade em semanas: {idade_semanas}')
 print(f'Sua idade em dias: {idade_dias}')  
+
+#------------------------------------------------------------------------------------------------------------
+# Exercício 15
+# João recebeu seu salário e precisa pagar duas contas que estão atrasadas. Como as contas estão atrasadas, João terá de pagar multa de 2% sobre cada conta. Faça um programa que calcule e mostre quanto restará do salário do João.
+
+# Valores da multa, salario e as duas contas
+multa = 0.02
+conta1 = float(input('Digite o valor da primeira conta: '))
+conta2 = float(input('Digite o valor da segunda conta: '))
+salario = 1500
+
+# Calculo das contas com o acréscimo das multas sendo descontado diretamente do salário
+calculo_multa1 = (conta1 + multa)
+calculo_multa2 = (conta2 + multa)
+resto_salario = salario - conta1 - conta2
+
+print(f'Valor do salário após pagar as contas: {resto_salario}')
+
+#------------------------------------------------------------------------------------------------------------
+# Exercício 16
+# Faça um programa que receba o valor dos catetos de um triângulo, calcule e mostre o valor da hipotenusa.
+
+# Valores dos catetos
+cateto1 = int(input('Digite o valor do primeiro cateto: '))
+cateto2 = int(input('Digite o valor do segundo cateto: '))
+
+# Calculando o valor da hipotenusa
+calculo_hipotenusa = (cateto1**2 + cateto2**2)**0.5
+
+print(f'O valor da Hipotenusa é: {calculo_hipotenusa:.2f}')
+
+#------------------------------------------------------------------------------------------------------------
+# Exercício 24
+# Faça um programa que receba a quantidade de dinheiro em reais que uma pessoa vai viajar possui. Essa pessoa vai passar por vários países e precisa converter seu dinheiro em dólares, marco alemão e libra esterlina. sabe-se que a cotação do dólar é de R$ 1.80, do marco alemão é de R$ 2.00, e da libra esterlina é de R$ 1.57. O programa deve fazer as conversões e mostra-lás.
+
+# Cotação das moedas segundo o problema estabeleceu
+valor_reais = float(input('Digite o dinheiro em reais para conversão: '))
+
+cotacao_dolar = 1.80
+cotacao_marco =  2.00
+cotacao_libra = 1.57
+
+# Calculo de conversão nas diversas moedas propostas
+conversao_dolar = valor_reais / cotacao_dolar
+conversao_marco = valor_reais / cotacao_marco
+conversao_libra = valor_reais / cotacao_libra
+
+# Saida das conversões
+print(f'Seu dinheiro em real é {valor_reais} e convertido para dolar fica {conversao_dolar:.2f}')
+print(f'Seu dinheiro em real é {valor_reais} e convertido para dolar fica {conversao_marco:.2f}')
+print(f'Seu dinheiro em real é {valor_reais} e convertido para dolar fica {conversao_libra:.2f}')
+
+#------------------------------------------------------------------------------------------------------------
+# Exercício 25
+# Faça um programa que receba uma hora (uma variável para hora e outra para minutos), calcule e mostre:
+# a) a hora digitada convertida em minutos;
+# b) o total dos minutos, ou seja, os minutos digitados mais a conversão anterior;
+# c) o total dos minutos convertidos em segundos.
+
+# Valor de horas e minutos digitados pelo usuário
+horas = int(input('Digite a hora: '))
+minutos = int(input('Digite os minutos: '))
+
+# Calculo de conversão de horas em minutos, a soma dos minutos digitados pelo usuario com a conversão anterior de horas em minutos e a transformação em segundos do total de minutos. 
+hora_minutos = horas * 60
+total_minutos = minutos + hora_minutos  
+total_segundos = total_minutos * 60
+
+print(f'A hora convertida em minutos: {hora_minutos}')
+print(f'Minutos digitados + hora convertido em minutos: {total_minutos}')
+print(f'O total de minutos convertidos em segundos é: {total_segundos}')
