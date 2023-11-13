@@ -4,6 +4,12 @@
 # Trabalho de laboratório = 2
 # Avaliação semestral = 3
 # Exame final = 5
+# Faça um programa que receba as três notas. calcule e mostre a média ponderada e o conceito que segue a tabela abaixo:
+# 8 a 10 = A
+# 7 a 8 = B
+# 6 a 7 = C
+# 5 a 6 = D
+# 0 a 5 = E
 
 trabalhoLab = float(input('Digite a 1ª nota do aluno: '))
 avaliacaoSemestral = float(input('Digite a 2ª nota do aluno: '))
@@ -37,6 +43,7 @@ else:
 #---------------------------------------------------------------------------------------------------------
 
 # Exercicio 3
+# Faça um programa que receba dois números e mostre o maior.
 
 num1 = int(input('Digite o 1ª número: '))
 num2 = int(input('Digite o 2ª número: '))
@@ -53,6 +60,7 @@ else:
 #---------------------------------------------------------------------------------------------------------
 
 # Exercício 4
+# Faça um programa que receba três números e mostre-os em ordem crescente.
 
 num1 = int(input("Digite o 1º número: "))
 num2 = int(input("Digite o 2º número: "))
@@ -78,7 +86,8 @@ else:
 
 #---------------------------------------------------------------------------------------------------------
 
-# Exercício 5
+# Exercício 6
+# Faça um programa que receba um número inteiro e verifique se esse número é par ou ímpar
 
 numero = int(input('Digite para verificar se é par ou impar : '))
 
@@ -90,6 +99,12 @@ else:
 #---------------------------------------------------------------------------------------------------------
 
 # Exercício 12
+# Faça um programa que receba o código correspondente ao cargo de um funcionário e seu salário atual e mostre o cargo, o valor do aumento e seu salário atual e mostre o novo salário. O s cargos estão na tabela a seguir.
+# Codigo = 1 -- Cargo = escrituário -- 50%
+# Codigo = 2 -- Cargo = Secretário -- 35%
+# Codigo = 3 -- Cargo = Caixa -- 20%
+# Codigo = 4 -- Cargo = Gerente -- 10%
+# Codigo = 5 -- Cargo = Diretor -- não tem aumento
 
 codigo = int(input('Digite o número correspondente ao cargo: '))
 salario = float(input('Digite seu salário atual: '))
@@ -125,6 +140,7 @@ else:
 #------------------------------------------------------------------------------------------------------------
 
 # Exercício 13
+# Faça um programa que apresente o menu de opções a seguir. permita ao usuário escolher a opçäo desejada, receba os dados necessários para executar a operação e mostre o resultado. Verifique a possibilidade de opção invàlida.
 
 opcao = int(input('*** MENU *** \n\n1. Imposto\n2. Novo Salário\n3. Classificação\n\nDigite a opção desejada: '))
 salarioAtual = float(input('Digite seu salário atual: '))
@@ -171,6 +187,18 @@ else:
 #------------------------------------------------------------------------------------------------------------
 
 # Exercício 14
+# Menu de opções:
+# 1. Imposto
+# 2. Novo salário
+# 3. Classificação
+# Digite a opção desejada.
+
+# Na opção 1: receber o salário de um funcionário, calcular e mostrar o valor do imposto usando as regras a seguir:
+# Salário menor que R$ 500,00  -- Percentual imposto = 5%
+# Salário de R$ 500,00 a R$ 850,00  -- Percentual imposto = 10%
+# Salário acima de R$ 850,00  -- Percentual imposto = 15%
+
+
 
 salarioF = float(input('Digite o salário: '))
 
