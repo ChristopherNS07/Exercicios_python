@@ -307,3 +307,66 @@ if altura >= 1.70:
     classificacao = 'i'
 
 print(f'Sua classificação em relação ao seu peso e altura é: {classificacao}')
+
+#------------------------------------------------------------------------------------------------------------
+
+# Exercício 22
+# Faça um programa que receba o código, o salário-base e o tempo de serviço de um funcionário. Calcule e mostre.
+
+# O imposto que está na tabela a seguir 
+# Se salário-Base menor que R$ 200,00 -- isento de imposto
+# Se está entre R$ 200,00 e R$ 450,00 -- 3%
+# Se está entre R$ 451,01 e R$ 700,00 -- 8%
+# Se maior que R$ 700 -- 12%
+#-----------------------------------------------------------------------------------------------------------------
+# A gratificação que está na tabela a seguir
+# Se salário-base for MENOR que R$ 500,00 com até 3 anos de tempo de serviço -- gratificação = 23
+# Se salário-base for MENOR que R$ 500,00 entre 3 anos a 6 anos de tempo de serviço -- gratificação = 35
+# Se salário-base for MENOR que R$ 500,00 acima de 6 anos de tempo de serviço -- gratificação = 33
+# Se salário-base for MAIOR que R$ 500,00 com até 3 anos de tempo de serviço -- gratificação = 20
+# Se salário-base for MAIOR que R$ 500,00 com mais de 3 anos de tempo de serviço -- gratificação = 30
+#-----------------------------------------------------------------------------------------------------------------
+# O salário líquido, ou seja, salário-base menos imposto mais gratificação;
+# A categoria que estpa na tabela a seguir.
+# Salário liquido até R$ 350,00 -- classificação = A
+# Salário líquido entre R$ 350,01 a R$ 600,00 -- classificação = B
+# Salário liquido acima de R$ 600,01 -- classificação = C
+
+codigo = int(input('Digite o código do funcionário: '))
+salario = float(input('Salário do funcionário: '))
+tempoServico = int(input('Tempo de serviço: '))
+
+if salario < 200:
+  inposto = 0
+elif salario >= 200 and salario < 450:
+  imposto = salario *  0.03
+elif salario >= 450 and salario < 700:
+  imposto = salario *  0.08
+else:
+  imposto = salario *  0.12
+
+if tempoServico >= 0:
+  if salario < 500 and tempoServico < 3:
+    gratificacao = 23
+  elif salario < 500 and tempoServico >= 3 and tempoServico < 6:
+    gratificacao = 35
+  elif salario < 500 and tempoServico > 6:
+    gratificacao = 33
+  elif salario >= 500 and tempoServico < 3:
+    gratificacao = 20
+  else:
+    gratificacao = 30
+
+salarioLiquido = salario + imposto + gratificacao
+
+if salarioLiquido < 350:
+  classificacao = "A"
+elif salarioLiquido >= 350 and salarioLiquido < 600:
+  classificacao = "B"
+else:
+  classificacao = "C"
+
+print(f'O valor do imposto é: {imposto}')
+print(f'A gratificação será no valor de: {gratificacao}')
+print(f'Salário liquido: {salarioLiquido}')
+print(f'Sua classificação é: {classificacao}')
