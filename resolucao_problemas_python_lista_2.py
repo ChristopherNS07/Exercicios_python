@@ -370,3 +370,78 @@ print(f'O valor do imposto é: {imposto}')
 print(f'A gratificação será no valor de: {gratificacao}')
 print(f'Salário liquido: {salarioLiquido}')
 print(f'Sua classificação é: {classificacao}')
+
+#-----------------------------------------------------------------------------------------------------------------
+
+# Exercício 23
+
+valorSalarioMin = float(input('Digite o valor do salário minimo do funcionário: '))
+turnoTrabalho = input('Turno trabalhado (M-Matutino, V-Vespertino, N-Noturno): ')
+categoriaFunc = input('Categoria do seu cargo (O-Operário, G-Gerente): ')
+horasTrabalhadas = int(input('Horas trabalhadas no mês: '))
+
+
+# Coeficiente do salário mínimo
+if turnoTrabalho.upper() == 'M':
+  valorCoeficiente = valorSalarioMin * 0.1
+elif turnoTrabalho.upper() == 'V':
+  valorCoeficiente = valorSalarioMin * 0.15
+elif turnoTrabalho.upper() == 'N':
+  valorCoeficiente = valorSalarioMin * 0.12
+else:
+  print('Turno invalido!')
+
+print(f'Valor do coeficiente é: {valorCoeficiente:.2f}')
+
+# Salário Bruto
+salarioBruto = horasTrabalhadas * valorCoeficiente
+
+print(f'Valor do salário Bruto é: {salarioBruto:.2f}')
+
+# Valor do imposto
+if categoriaFunc.upper() == 'O':
+  if salarioBruto < 300:
+    imposto = salarioBruto * 0.03
+  
+  else:
+    imposto = salarioBruto * 0.5
+
+elif categoriaFunc.upper() == 'G':
+   if salarioBruto < 400:
+      imposto = salarioBruto * 0.06
+   
+   else:
+      imposto = salarioBruto * 0.04
+
+else:
+  print('valor inválido')  
+
+print(f'Valor do imposto é: {imposto:.2f}')
+
+#Gratificação do funcionário
+if turnoTrabalho.upper() == 'N' and horasTrabalhadas >= 80:
+  gratificacaoFunc = 50
+else:
+  gratificacaoFunc = 30
+
+print(f'Valor do gratificação é: {gratificacaoFunc:.2f}')
+
+#Auxílio Alimentação
+if categoriaFunc == 'O' or valorCoeficiente <= 25:
+  auxAlimentacao = salarioBruto / 3
+else:
+  auxAlimentacao = salarioBruto / 2
+
+print(f'Valor do auxilio alimentação é: {auxAlimentacao:.2f}')
+
+#Salário Líquido
+salarioLiquido = salarioBruto - imposto + gratificacaoFunc + auxAlimentacao
+
+print(f'Valor do salário líquido é: {salarioLiquido:.2f}')
+
+if salarioLiquido < 350:
+  print('Mal remunerado')
+elif salarioLiquido >= 350 and salarioLiquido < 600:
+  print('Normal')
+else:
+  print('Bem remunerado')
