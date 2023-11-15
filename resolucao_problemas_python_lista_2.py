@@ -326,14 +326,14 @@ print(f'Sua classificação em relação ao seu peso e altura é: {classificacao
 # Se está entre R$ 200,00 e R$ 450,00 -- 3%
 # Se está entre R$ 451,01 e R$ 700,00 -- 8%
 # Se maior que R$ 700 -- 12%
-#-----------------------------------------------------------------------------------------------------------------
+
 # A gratificação que está na tabela a seguir
 # Se salário-base for MENOR que R$ 500,00 com até 3 anos de tempo de serviço -- gratificação = 23
 # Se salário-base for MENOR que R$ 500,00 entre 3 anos a 6 anos de tempo de serviço -- gratificação = 35
 # Se salário-base for MENOR que R$ 500,00 acima de 6 anos de tempo de serviço -- gratificação = 33
 # Se salário-base for MAIOR que R$ 500,00 com até 3 anos de tempo de serviço -- gratificação = 20
 # Se salário-base for MAIOR que R$ 500,00 com mais de 3 anos de tempo de serviço -- gratificação = 30
-#-----------------------------------------------------------------------------------------------------------------
+
 # O salário líquido, ou seja, salário-base menos imposto mais gratificação;
 # A categoria que estpa na tabela a seguir.
 # Salário liquido até R$ 350,00 -- classificação = A
