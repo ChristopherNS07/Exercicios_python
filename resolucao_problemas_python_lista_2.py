@@ -445,3 +445,109 @@ elif salarioLiquido >= 350 and salarioLiquido < 600:
   print('Normal')
 else:
   print('Bem remunerado')
+
+#-----------------------------------------------------------------------------------------------------------------
+
+# Exercício 24
+# Faça um programa que receba o preço, o tipo (A - Alimentação, L - Limpeza e V - Vestuário) e a refrigeração (S - Produto que necessita de refrigeração e N - Produto que não necessita de refrigeração) de um produto. Suponha que haverá apenas a digitação de dados válidos e, quando houver digitação de letras, utilize letras maiúsculas, Calcule e mostre:
+
+# O valor adicional, de acordo com a tabela a seguir.
+# Se refrigeração = 'N', tipo do produto = 'A' e preço do produto MENOR que 15, o valor adicional será no valor de R$ 2,00 e se o preço do produto for MAIOR OU IGUAL que 15 o valor adicional será no valor de R$ 5,00
+# Se refrigeração = 'N', tipo do produto = 'L' e preço do produto MENOR que 10, o valor adicional será no valor de R$ 1,50 e se o preço do produto for MAIOR OU IGUAL que 10 o valor adicional será no valor de R$ 2,50
+# Se refrigeração = 'N', tipo do produto = 'V' e preço do produto MENOR que 30, o valor adicional será no valor de R$ 3,00 e se o preço do produto for MAIOR OU IGUAL que 30 o valor adicional será no valor de R$ 2,50
+# Se refrigeração = 'S', tipo do produto = 'A' o valor adicional será no valor de R$ 8,00
+# Se refrigeração = 'S', tipo do produto = 'L' ou 'V' será isento do valor adicional
+
+# O valor do imposto, de acordo com a regra a seguir.
+# Se preço for MENOR que 25 o percentual sobre o preço será de 5%
+# Se preço for MAIOR OU IGUAL que 25 o percentual sobre o preço será de 8%
+
+# O preço de custo, ou seja, somar preço mais imposto.
+
+# O desconto, de acordo com as regras a seguir.
+# Calcular o desconto com base nas seguintes regras:
+# Caso o tipo do produto = 'A' ou tipo de refrigeração = 'S' desconto = 0 caso não preencha nenhum desses requisitos o desconto será de 3%
+
+# O novo preço, ou seja, preço mais adicional menos desconto.
+
+# A classificação, de acordo com a regra a seguir.
+# Caso o novo preço seja MENOR OU IGUAL a R$ 50,00 será classificado como Barato
+# Caso o novo preço ESTEJA ENTRE R$ 50,00 e R$ 100,00 será classificado como Normal
+# Caso o novo preço seja MAIOR OU IGUAL a R$ 100,00 será classificado como caro
+
+refrigeracao = input('Digite "S" para produto que necessita de refrigeração ou "N" para produto que não necessita: ') 
+tipoProduto = input('Digite o tipo do produto (A - Alimentação, L - Limpeza, V - Vestuário): ')
+valorPreco = float(input('Digite o preço do produto: '))
+
+# Condicional que restrige a escolha a letra "N" e a letra "S"
+if refrigeracao.upper() == 'N' or refrigeracao.upper() == 'S':
+  
+  # Sendo digitado o tipo de refrigeração 'N', o tipo do produto sendo 'A' e menor que 15 o valor Adicional será de 2,00 caso contrário sera de 5,00
+  if refrigeracao.upper() == 'N':
+      if tipoProduto.upper() == 'A':
+        if valorPreco < 15: 
+            valorAdicional = 2
+        else:
+            valorAdicional = 5
+      
+      # Caso o tipo do produto seja 'L' e menor que 10 o valor Adicional será de 1,50 caso contrário sera de 2,50
+      elif tipoProduto.upper() == 'L':
+        if valorPreco < 10:
+          valorAdicional = 1.50
+        else:
+          valorAdicional = 2.50  
+      # Caso o tipo do produto seja 'V' e menor que 30 o valor Adicional será de 3,00 caso contrário será de 2,50
+      elif tipoProduto.upper() == 'V':
+        if valorPreco < 30:
+          valorAdicional = 3
+        else:
+          valorAdicional = 2.50
+      else:
+         print('Erro: tipo de produto inexistente!1')
+  
+  # Sendo digitado o tipo de refrigeração 'S', o tipo do produto sendo 'A' e menor que 15 o valor Adicional será de 8,00
+  if refrigeracao.upper() == 'S':
+      if tipoProduto == 'A':
+        valorAdicional = 8
+      # Caso o tipo do produto seja 'L' ou 'V' será isento do valor adicional
+      elif tipoProduto == 'L'or tipoProduto == 'V':
+        valorAdicional = 0
+      else:
+        print('Erro: tipo de produto inexistente!')
+else:
+      print('Erro na seleção de categoria de resfriamento')
+
+# Imposto
+if valorPreco < 25:
+  imposto = valorPreco * 0.05
+else:
+  imposto = valorPreco * 0.08
+
+print(f'Valor imposto: R$ {imposto:.2f}')
+
+# Preço de custo
+precoCusto = valorPreco + imposto
+print(f'Preço de custo: R$ {precoCusto:.2f}')
+
+
+# Desconto
+if tipoProduto == 'A' or refrigeracao == 'S':
+  desconto = 0
+else:
+  desconto = valorPreco * 0.03
+
+print(f'Valor desconto: R$ {desconto:.2f}')
+
+# Calculo do novo preço
+novoPreco = valorPreco + valorAdicional - desconto
+
+print(f'Novo preço do produto: R$ {novoPreco:.2f}')
+
+if novoPreco <= 50:
+  classificacao = 'barato'
+elif novoPreco > 50 and novoPreco < 100:
+  classificacao = 'Normal'
+else:
+  classificacao = 'Caro'
+
+print(f'Classificação: {classificacao}')
