@@ -258,6 +258,10 @@ print(f'O valor do salário a receber mais beneficios será de: {salarioReceber}
 #------------------------------------------------------------------------------------------------------------
 
 # Exercício 16
+# um supermercado deseja reajustar os preços de seus produtos usando o seguinte critério: o produto poderá ter seu preço aumentado o udiminuído. Para alterar o preço o produto deve preencher pelo menos um dos requisitos a seguir:
+# Se venda média mensal MENOR que R$ 500,00 E preço atual MENOR que R$ 30,00 o reajuste de aumento do preço será de 10%
+# Se venda média mensal for MAIOR/IGUAL a R$ 500,00 e MENOR que R$ 1200,00 E preço atual MAIOR;IGUAL a R$ 30,00 e MENOR que R$ 80,00 o reajuste de aumento do preço será de 15%
+# Se venda média mensal MAIOR que R$ 1200,00 E preço atual MAIOR que R$ 80,00 o reajuste de diminuuição do preço será de 20%
 
 precoAtual = float(input('Preço atual do produto: '))
 vendaMediaMes = float(input('Venda mensal média do produto: '))
@@ -278,6 +282,10 @@ print(f'O preço atualizado do produto será: {reajuste}')
 #------------------------------------------------------------------------------------------------------------
 
 # Exercício 19
+# Faça um programa que receba a altura e o peso de uma pessoa. De acordo com a tabela a seguir verifique e mostre qual a classificação dessa pessoa.
+# Se altura MENOR que  1,20 e peso MENOR que 60 a classificação será 'A', caso peso esteja ENTRE 60 até 90 a clasificação será 'D' e caso esteja ACIMA de 90 a classificação será 'G'
+# Se altura seja de 1,20 até 1,70 e peso MENOR que 60 a classificação será 'B', caso peso esteja ENTRE 60 até 90 a clasificação será 'E' e caso esteja ACIMA de 90 a classificação será 'H'
+# Se altura MAIOR que 1,70 e peso MENOR que 60 a classificação será 'C', caso peso esteja ENTRE 60 até 90 a clasificação será 'F' e caso esteja ACIMA de 90 a classificação será 'I'
 
 altura = float(input('Digite sua altura: '))
 peso = float(input('Digite seu peso: '))
@@ -372,8 +380,31 @@ print(f'Salário liquido: {salarioLiquido}')
 print(f'Sua classificação é: {classificacao}')
 
 #-----------------------------------------------------------------------------------------------------------------
-
 # Exercício 23
+# Faça um programa que receba o valor do salário mínimo, o turno de trabalho (M - matutino, V - Vespertino ou N - Noturno), a categoria (O - Operário, G - Gerente) e o número de horas trabalhadas no mês de um funcionário, Supondo a digitação apenas de dados válidos e, quando houver digitação de letras utilize letras maiúsculas. Calcule e mostre:
+
+# O coeficiente do salário, de acordo com a tabela a seguir:
+# Se Turno de trabalho = M (Matutino) valor do coeficiente será de 10%
+# Se Turno de trabalho = V (Vespertino) valor do coeficiente será de 15%
+# Se Turno de trabalho = N (Noturno) valor do coeficiente será de 20%
+
+# O salário bruto, ou seja, o número de horas trabalhadas multiplicado pelo valor do coeficiente do salário.
+
+# O imposto, de acordo com a tabela a seguir:
+# Se categoria = O (Operário) e o salário bruto for MAIOR/IGUAL a R$ 300,00 o imposto sobre o salário bruto será de 5% e caso o salario for MENOR que R$ 300,00 o imposto será de 3%
+# Se categoria = G (Gerente) e o salário bruto for MAIOR/IGUAL a R$ 400,00 o imposto sobre o salário bruto será de 6% e caso o salario for MENOR que R$ 400,00 o imposto será de 4%
+
+# A gratificação, de acordo com as regras a seguir:
+# Se o funcionário preencher TODOS os requisitos abaixo, sua gratificação será de R$ 50,00; caso contrário será de R$ 30,00. Os requisitos são:
+# Turno do funcionário = N (Noturno) e número de horas trabalhadas for SUPERIOR a 80 horas
+
+# O auxílio alimentação, de acordo com as regras a seguir:
+# Se o funcionario preencher ALGUM dos requisitos abaixo, seu auxílio-alimentação será de um terço do seu salário bruto; caso contrário será de metade do seu salário bruto. os requisitos são:
+# Categoria do funcionário = O (Operário) e coeficiente do salário for MENOR/IGUAL 25
+
+# O salário liquido, ou seja, salário bruto menos imposto mais gratificação mais auxilio alimentação.
+
+
 
 valorSalarioMin = float(input('Digite o valor do salário minimo do funcionário: '))
 turnoTrabalho = input('Turno trabalhado (M-Matutino, V-Vespertino, N-Noturno): ')
@@ -452,9 +483,9 @@ else:
 # Faça um programa que receba o preço, o tipo (A - Alimentação, L - Limpeza e V - Vestuário) e a refrigeração (S - Produto que necessita de refrigeração e N - Produto que não necessita de refrigeração) de um produto. Suponha que haverá apenas a digitação de dados válidos e, quando houver digitação de letras, utilize letras maiúsculas, Calcule e mostre:
 
 # O valor adicional, de acordo com a tabela a seguir.
-# Se refrigeração = 'N', tipo do produto = 'A' e preço do produto MENOR que 15, o valor adicional será no valor de R$ 2,00 e se o preço do produto for MAIOR OU IGUAL que 15 o valor adicional será no valor de R$ 5,00
-# Se refrigeração = 'N', tipo do produto = 'L' e preço do produto MENOR que 10, o valor adicional será no valor de R$ 1,50 e se o preço do produto for MAIOR OU IGUAL que 10 o valor adicional será no valor de R$ 2,50
-# Se refrigeração = 'N', tipo do produto = 'V' e preço do produto MENOR que 30, o valor adicional será no valor de R$ 3,00 e se o preço do produto for MAIOR OU IGUAL que 30 o valor adicional será no valor de R$ 2,50
+# Se refrigeração = 'N', tipo do produto = 'A' e preço do produto MENOR que 15, o valor adicional será no valor de R$ 2,00 e se o preço do produto for MAIOR/IGUAL que 15 o valor adicional será no valor de R$ 5,00
+# Se refrigeração = 'N', tipo do produto = 'L' e preço do produto MENOR que 10, o valor adicional será no valor de R$ 1,50 e se o preço do produto for MAIOR/IGUAL que 10 o valor adicional será no valor de R$ 2,50
+# Se refrigeração = 'N', tipo do produto = 'V' e preço do produto MENOR que 30, o valor adicional será no valor de R$ 3,00 e se o preço do produto for MAIOR/IGUAL que 30 o valor adicional será no valor de R$ 2,50
 # Se refrigeração = 'S', tipo do produto = 'A' o valor adicional será no valor de R$ 8,00
 # Se refrigeração = 'S', tipo do produto = 'L' ou 'V' será isento do valor adicional
 
