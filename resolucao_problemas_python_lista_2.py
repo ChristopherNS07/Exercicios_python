@@ -224,6 +224,30 @@ print(f'Seu salário total com beneficios será de: {salarioAtual} ')
 #------------------------------------------------------------------------------------------------------------
 
 # exercício 15
+# Faça um programa que receba o valor do salário mínimo, o número de horas trabalhadas, o número de dependentes do funcionário e a quantidade de horas extras trabalhadas. Calcule e mostre o salário a receber do funcionário de acordo com as regras a seguir:
+
+# O valor da hora trabalhada é igual a 1/5 do salário mínimo;
+
+# O salário do mês é igual ao número de horas trabalhadas multiplicando pelo valor da hora trabalhada;
+
+# Para cada dependente acrescentar R$ 32,00;
+
+# Para cada hora extra trabalhada calcular o valor da hora trabalhada acrescida de 50%;
+
+# O salário bruto é igual ao salário do mês mais o valor dos dependentes mais o valor das horas extras;
+
+# Calcular o valor do imposto de renda retido na fonte de acordo com a tabela a seguir.
+# IRRF = isento se salário bruto for MENOR que R$ 200,00
+# IRRF = 10% se salário bruto for MAIOR/IGUAL a R$ 200,00 até R$ 500,00 
+# IRRF = 20% se salário bruto for MAIOR que R$ 500,00 
+
+# O valor do salário liquido é igual ao salário bruto menos o IRRF.
+
+# A gratificação de acordo com a tabela a seguir:
+# Se salário líquido for MENOR que R$ 350,00 a gratificação será no valor de R$ 100,00
+# Se salário líquido for MAIOR/IGUAL a R$ 350,00 a gratificação será no valor de R$ 50,00 
+
+# O salário a receber do funcionário é igual ao salário liquido mais a gratificação.
 
 salarioMin = float(input('Valor do salário minimo: '))
 horasTrab = float(input('Quantidade de horas trabalhadas: '))
@@ -231,10 +255,19 @@ quantDependentes = int(input('Quantidade de dependentes: '))
 horasExtra = float(input('Quantidade de horas extras: '))
 
 valorHoraTrab = salarioMin / 5
+print(f'Valor da hora: {valorHoraTrab:.2f}')
+
 salarioMes = horasTrab * valorHoraTrab
+print(f'Valor salário do mês: {salarioMes:.2f}')
+
 valorDependentes = quantDependentes * 32
+print(f'Valor total dos dependentes: {valorDependentes:.2f}')
+
 valorHoraExtra = valorHoraTrab + (valorHoraTrab * 0.5)
+print(f'Valor da hora extra: {valorHoraExtra:.2f}')
+
 salarioBruto = salarioMes + valorDependentes + (valorHoraExtra * horasExtra)
+print(f'Valor salário bruto: {salarioBruto:.2f}')
 
 if salarioBruto < 200:
   imposto = 0
@@ -243,18 +276,19 @@ elif salarioBruto >= 200 and salarioBruto < 500:
   imposto = salarioBruto * 0.1
 else:
   imposto = salarioBruto * 0.2
+print(f'Valor imposto: {imposto:.2f}')
 
 salarioLiquido = salarioBruto - imposto
+print(f'Valor salário líquido: {salarioLiquido:.2f}')
 
 if salarioLiquido < 350:
   gratificacao = 100
 else:
   gratificacao = 50
+print(f'Valor gratificação: {gratificacao:.2f}')
 
 salarioReceber = salarioLiquido + gratificacao
-
-print(f'O valor do salário a receber mais beneficios será de: {salarioReceber}')
-
+print(f'O valor do salário a receber mais beneficios será de: {salarioReceber:.2f}')
 #------------------------------------------------------------------------------------------------------------
 
 # Exercício 16
