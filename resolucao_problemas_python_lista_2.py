@@ -198,8 +198,6 @@ else:
 # Salário de R$ 500,00 a R$ 850,00  -- Percentual imposto = 10%
 # Salário acima de R$ 850,00  -- Percentual imposto = 15%
 
-
-
 salarioF = float(input('Digite o salário: '))
 
 if salarioF < 500:
@@ -438,13 +436,10 @@ print(f'Sua classificação é: {classificacao}')
 
 # O salário liquido, ou seja, salário bruto menos imposto mais gratificação mais auxilio alimentação.
 
-
-
 valorSalarioMin = float(input('Digite o valor do salário minimo do funcionário: '))
 turnoTrabalho = input('Turno trabalhado (M-Matutino, V-Vespertino, N-Noturno): ')
 categoriaFunc = input('Categoria do seu cargo (O-Operário, G-Gerente): ')
 horasTrabalhadas = int(input('Horas trabalhadas no mês: '))
-
 
 # Coeficiente do salário mínimo
 if turnoTrabalho.upper() == 'M':
@@ -616,3 +611,36 @@ else:
   classificacao = 'Caro'
 
 print(f'Classificação: {classificacao}')
+
+#-----------------------------------------------------------------------------------------------------------------
+
+# Exercício 25
+# Uma empresa decidiu dar uma gratificação de natal aos seus funcionários, baseada no número de horas extras e no número de horas que o funcionário faltou ao trabalho. O valor do prêmio é obtido pela consulta na tabela a seguir, em que:
+# H = (número de horas extras) - 2/3 * ((número de horas falta))
+
+numHoraExtra = float(input('Digite a quantidade de horas extras feitas pelo funcionário: '))
+numHoraFalta = float(input('Quantidade de horas falta: '))
+
+#Calculo para se basear em qual será o valor da gratificação 
+H = (numHoraExtra - (numHoraExtra * (2/3))) * numHoraFalta
+
+# Valor da gratificação segundo as condições
+if H < 600:
+  gratificacao = 100
+
+elif H >= 600 and H < 1200:
+  gratificacao = 200
+
+elif H >= 1200 and H < 1800:
+  gratificacao = 300
+
+elif H >= 1800 and H < 2400:
+  gratificacao = 400
+
+else:
+  gratificacao = 500
+
+# Valor do premio
+valorPremio = H + gratificacao
+
+print(f'Valor do premio: R$ {valorPremio:.2f}')
